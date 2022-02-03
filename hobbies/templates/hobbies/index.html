@@ -1,0 +1,12 @@
+{% extends "hobbies/layout.html" %}
+{% block body %}
+        <h1>My Hobbies</h1>
+        <ul>
+            {% for hobby in hobbies %}
+                <li>{{ hobby }}</li>
+                {% empty %}
+                <h1>No hobby!</h1>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'hobbies:add' %}">Add new hobby.</a>
+{% endblock %}
